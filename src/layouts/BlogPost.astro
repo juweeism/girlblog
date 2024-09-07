@@ -1,8 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -12,58 +10,35 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
+		<BaseHead title={"juwee | " + title} description={description} />
 	</head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
+	<body class="flex flex-col gap-3 max-w-[700px] mx-auto font-mono px-5 py-6">
+		<main class="">
+            <a href="/">
+            <pre class="font-mono leading-none text-[50%]">
+       _                         _      
+      (_)_  ___      _____  ___ ( )_____
+     / / / / / | /| / / _ \/ _ \|// ___/
+    / / /_/ /| |/ |/ /  __/  __/ (__  ) 
+ __/ /\__,_/ |__/____\________/ /____/  
+/______ _(_)____/ / /_  / /___  ____ _  
+  / __ `/ / ___/ / __ \/ / __ \/ __ `/  
+ / /_/ / / /  / / /_/ / / /_/ / /_/ /   
+ \__, /_/_/  /_/_.___/_/\____/\__, /    
+/____/                       /____/     
+            </pre>
+            </a>
+		</main>
+        <div>
+			<article class="mt-12">
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
+				<div class="prose ">
+					<div class="overflow-hidden">
+						<h1 class="text-xl md:text-3xl my-1 md:text-3xl font-bold">{title}</h1>
+						<div>
 							<FormattedDate date={pubDate} />
 							{
 								updatedDate && (
@@ -73,13 +48,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 								)
 							}
 						</div>
-						<h1>{title}</h1>
-						<hr />
 					</div>
-					<slot />
+                    <div class="my-3">
+					    <slot />
+                    </div>
 				</div>
 			</article>
-		</main>
-		<Footer />
+        </div>
 	</body>
 </html>

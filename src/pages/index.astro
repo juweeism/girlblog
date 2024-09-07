@@ -2,7 +2,13 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <!doctype html>
@@ -10,41 +16,40 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
+	<body class="max-w-[700px] mx-auto p-3">
+            <main class="text-center">
+                <pre class="font-mono leading-none text-[70%] md:text-sm md:leading-none my-7">
+       _                         _      
+      (_)_  ___      _____  ___ ( )_____
+     / / / / / | /| / / _ \/ _ \|// ___/
+    / / /_/ /| |/ |/ /  __/  __/ (__  ) 
+ __/ /\__,_/ |__/____\________/ /____/  
+/______ _(_)____/ / /_  / /___  ____ _  
+  / __ `/ / ___/ / __ \/ / __ \/ __ `/  
+ / /_/ / / /  / / /_/ / / /_/ / /_/ /   
+ \__, /_/_/  /_/_.___/_/\____/\__, /    
+/____/                       /____/     
+                </pre>
+                <p>not engineer or designer but a secret third thing<br/>say hi on <a href="https://x.com/juweeism" target="_blank">X</a></p>
+            </main>
+            <div class="m-7 overflow-hidden">
+                <div class="w-max overflow-hidden text-xs tracking-widest">---------------------------------------------------------------------------------------------------------</div>
+                <h3 class="leading-none px-3">POSTS</h3>
+                <div class="w-max overflow-hidden text-xs tracking-widest">---------------------------------------------------------------------------------------------------------</div>
+                <ul>
+                {
+						posts.map((post) => (
+							<li class="py-1 px-3 hover:bg-zinc-300">
+								<a href={`/blog/${post.slug}/`} class="flex gap-3 justify-between w-full">
+									<span class="underline">{post.data.title}</span>
+									<p class="">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+                }
+                </ul>
+            </div>
 	</body>
 </html>
