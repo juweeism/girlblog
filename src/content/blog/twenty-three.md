@@ -1,7 +1,7 @@
 ---
-title: twenty three
-description: 23 is too late to be neurotic.
-pubDate: Sep 07 2024
+title: "twenty three"
+description: "23 is too late to be neurotic."
+pubDate: "Sep 07 2024"
 ---
 
 *hi*
