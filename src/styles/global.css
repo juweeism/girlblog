@@ -47,9 +47,9 @@ blockquote p {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(#33f, #99f, #eef, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #99f);
+    width: 100dvw;
+    height: 100dvh;
+    background: linear-gradient(#33f, #99f, #eef, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #eef, #99f);
     opacity: 0.6;
     z-index: -1;
 }
