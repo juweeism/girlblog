@@ -15,7 +15,7 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="max-w-[700px] mx-auto p-3">
-            <main class="text-center">
+            <main class="text-center mt-16">
                 <pre class="font-mono leading-none text-[70%] md:text-sm md:leading-none my-7">
        _                         _      
       (_)_  ___      _____  ___ ( )_____
@@ -29,14 +29,14 @@ const posts = (await getCollection('blog')).sort(
 /____/                       /____/     
                 </pre>
                 <p class="max-w-[35ch] mx-auto">not an engineer or a designer but a secret third thing! say hi on <a href="https://x.com/juweeism" target="_blank" class="underline">X</a></p>
-            </main>
-            <div class="m-7 overflow-hidden">
 
-                <div class="text-center mb-7">
+                <div class="text-center my-5">
                     <h1>ALSO VISIT</h1>
                     <a href="https://archive.juw.ee" class="underline">/archives</a>
                 </div>
 
+            </main>
+            <div class="max-w-[600px] mx-auto overflow-hidden">
                 <div class="w-max overflow-hidden text-xs tracking-widest">---------------------------------------------------------------------------------------------------------</div>
                 <h3 class="leading-none px-3">POSTS</h3>
                 <div class="w-max overflow-hidden text-xs tracking-widest">---------------------------------------------------------------------------------------------------------</div>
