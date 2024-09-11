@@ -16,7 +16,8 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body class="max-w-[700px] mx-auto p-3">
             <main class="text-center mt-16">
-                <pre class="font-mono leading-none text-[70%] md:text-sm md:leading-none my-7">
+                <div class="relative w-max mx-auto">
+                    <pre class="font-mono leading-none text-[70%] md:text-sm md:leading-none my-7">
        _                         _      
       (_)_  ___      _____  ___ ( )_____
      / / / / / | /| / / _ \/ _ \|// ___/
@@ -27,7 +28,9 @@ const posts = (await getCollection('blog')).sort(
  / /_/ / / /  / / /_/ / / /_/ / /_/ /   
  \__, /_/_/  /_/_.___/_/\____/\__, /    
 /____/                       /____/     
-                </pre>
+                    </pre>
+                    <a href="/about" class="absolute right-[3.7rem] bottom-[-3px] md:bottom-[-9px] text-xs md:text-base md:right-[0.5rem] bg-lime-500 py-1 px-2 rounded-[50%] text-white md:rotate-[-7deg] hover:rotate-12">about me</a>
+                </div>
                 <p class="max-w-[35ch] mx-auto">not an engineer or a designer but a secret third thing! say hi on <a href="https://x.com/juweeism" target="_blank" class="underline">X</a></p>
 
                 <div class="text-center my-5">
@@ -71,4 +74,5 @@ const posts = (await getCollection('blog')).sort(
     #gradient-bottom {
         background: linear-gradient(#3333ff00, #3333ffaa);
     }
+
 </style>

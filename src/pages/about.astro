@@ -1,0 +1,84 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+<html>
+	<head>
+		<BaseHead title={"about juwee | " + SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+        <div class="max-w-[600px] mx-auto p-3 mt-24 w-full h-full overflow-x-hidden">
+            <a href="/">↜ TAKE ME HOME</a>
+            <div class="w-max overflow-hidden text-xs tracking-widest">---------------------------------------------------------------------------------------------------------</div>
+            <div class="my-12">
+                <div class="max-w-[300px] my-6">
+                    <img src="https://i.pinimg.com/736x/25/06/f6/2506f68de5ef4da500419c10b480fe97.jpg" alt="snoopy on a horse">
+                </div>
+                <p>hello! it is i, juwee</p>
+                <p>this website is a work in progress. excuse it for the grammatical errors, my vocabulary is elementary at best. in the meantime, here are some relevant information about me.</p>
+                <p>currently a *swe* at *startup* where i do a little bit of Frolicking Around and Finding Out with some tasteful engineering on the side.</p>
+                <details>
+                    <summary>a non exhaustive list of things i enjoy</summary>
+                    <ul>
+                        <li>microblogging on x</li>
+                        <li>earthy colorschemes. (greens especially!)</li>
+                        <li>rating a 3 star movie 5 stars on letterboxd</li>
+                        <li>curating playlists on spotify</li>
+                    </ul>
+                </details> 
+                <details>
+                    <summary>what i'm into right now</summary>
+                    <ul>
+                        <li>compilers</li>
+                        <li>functional programming</li>
+                        <li>interaction design</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>top films in no particular order</summary>
+                    <ul>
+                        <li>One Cut of the Dead (2017)</li>
+                        <li>The Handmaiden (2016)</li>
+                        <li>Thoroughbreds (2017)</li>
+                        <li>Monster (2023)</li>
+                        <li>Prisoners (2013)</li>
+                        <li>Addams Family Values (1993)</li>
+                        <li>Coraline (2009)</li>
+                    </ul>
+                </details> 
+                <p>heyyy if you're still reading and you enjoyed your stay, please don't hesitate to say hi on <a href="https://x.com/juweeism" class="underline">X</a></p>
+            </div>
+        </div>
+
+        <div id="gradient"></div>
+        <div id="gradient-bottom"></div>
+    </body>
+</html>
+
+<style>
+
+    #gradient {
+        background: linear-gradient(#3333ff, #3333ff66, #3333ff00);
+    }
+
+    img {
+        filter: drop-shadow(fuchsia 0 0 6px)    
+    }
+
+    #gradient-bottom {
+        background: linear-gradient(#3333ff00, #3333ffaa);
+    }
+
+    p, details {
+        margin: 1rem 0;
+    }
+
+    details ul {
+        padding-left: 1rem;
+        margin-left: 0.27rem;
+        font-size: 0.75rem;
+        border-left: 1px solid limegreen;
+    }
+
+</style>
