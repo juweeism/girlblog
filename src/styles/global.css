@@ -11,10 +11,13 @@
     --accent-dark: #000d8a;
 }
 
+html {
+    position: relative;
+}
+
 body {
     margin: 0;
     padding: 0;
-    position: relative;
     font-size: 14px;
     text-align: left;
     font-family: 'Courier Prime', system-ui, sans-serif;
@@ -44,12 +47,21 @@ blockquote p {
 }
 
 #gradient {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100dvw;
-    height: 100dvh;
-    background: linear-gradient(#33f, #99f, #eef, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #eef, #99f);
+    height: 7rem;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+#gradient-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100dvw;
+    height: 3rem;
     opacity: 0.6;
     z-index: -1;
 }

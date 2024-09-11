@@ -56,5 +56,19 @@ const posts = (await getCollection('blog')).sort(
                 </ul>
             </div>
             <div id="gradient"></div>
+            <div id="gradient-bottom"></div>
 	</body>
 </html>
+
+<style>
+    html {
+        height: 100%;
+    }
+    #gradient {
+        background: linear-gradient(#3333ff, #3333ff66, #3333ff00);
+    }
+
+    #gradient-bottom {
+        background: linear-gradient(#3333ff00, #3333ffaa);
+    }
+</style>
