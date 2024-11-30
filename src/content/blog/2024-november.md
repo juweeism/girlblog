@@ -1,7 +1,7 @@
 ---
 title: "Notes, November 2024"
 description: "notes, tmil, music, films, art"
-thumbnail: "https://archive.juw.ee/img/thumbnail-2411%20copy.jpg"
+thumbnail: "https://archive.juw.ee/img/thumbnail-2411.jpg"
 pubDate: "Nov 30 2024"
 ---
 
