@@ -31,7 +31,7 @@ const { title, description, pubDate, thumbnail = ""} = Astro.props;
         <meta property="twitter:domain" content="juw.ee">
         <meta property="twitter:url" content={canonicalURL}>
         <meta name="twitter:site" content="@juweeism" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={"blog | " + title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={thumbnail || "/banner.png"} />
 	</head>
