@@ -8,7 +8,7 @@ pubDate: "Nov 30 2024"
 Hi~ This month has been filled with lots of chess, crossing projects off of "ongoing" list, growing my music and film library, and making some horrible first attempts. 
 ### goings on
 
-[cinerama.pages.dev](cinerama.pages.dev) - For regular cinema goers. I built a silly website that pulls movies currently screening and generates a calendar invite link for you. The theme was inspired from old theaters and drive ins. 
+[cinerama.pages.dev](https://cinerama.pages.dev) - For regular cinema goers. I built a silly website that pulls movies currently screening and generates a calendar invite link for you. The theme was inspired from old theaters and drive ins. 
   
 PERSONAL WEBSITE - I have won a battle against the inner critic and pushed out my personal website with a headline that reads like a reductress article.  
 
