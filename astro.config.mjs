@@ -11,5 +11,10 @@ export default defineConfig({
     integrations: [mdx(), sitemap()],
     vite: {
         plugins: [tailwindcss()],
+        build: {
+            rollupOptions: {
+                external: ['@fontsource/zen-maru-gothic']
+            }
+        }
     }
 });
