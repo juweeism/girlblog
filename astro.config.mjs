@@ -13,8 +13,11 @@ export default defineConfig({
         plugins: [tailwindcss()],
         build: {
             rollupOptions: {
-                external: ['@fontsource/zen-maru-gothic']
+                external: ['@fontsource/*']
             }
-        }
+        },
+        ssr: {
+            noExternal: ['@fontsource/*'],
+        },
     }
 });
