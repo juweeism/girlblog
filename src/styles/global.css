@@ -1,16 +1,11 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@theme {
+    --font-sans: 'Zen Maru Gothic', sans-serif;
+    --color-choco: oklch(60% 0.12 60);
+    --color-mint: oklch(60% 0.21 237);
+}
 
 :root {
     --accent: #2337ff;
@@ -24,63 +19,35 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 1rem;
     text-align: left;
-    font-family: 'Courier Prime', system-ui, sans-serif;
 }
 
 article {
-    margin: 9rem 0;
-}
-
-article h1 {
-    margin-top: 1rem;
-    font-family: Newsreader, system-ui, sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-article h3 {
-    margin-top: 4.5rem;
-    font-size: 1.7rem;
-    font-family: 'Newsreader', system-ui, mono;
-    font-weight: 300;
-    font-style: italic;
-    opacity: 0.5;
+    margin: 3rem 0;
 }
 
 article p {
-    font-family: 'Courier Prime', system-ui, sans-serif;
-    margin: 1.5rem 0;
-    font-size: 1rem;
-    font-weight: 300;
+    margin: 1rem 0;
 }
 
 article a {
     text-decoration: underline;
-    font-family: 'Courier Prime', system-ui, sans-serif;
 }
 
 article li {
-    font-family: 'Courier Prime', system-ui, sans-serif;
     font-size: 1rem;
     margin-left: 1rem;
 }
 
-article em {
-    font-family: Newsreader, 'Times New Roman', Times, serif;
-}
-
 article strong {
     font-weight: 500;
-    font-family: 'Courier Prime', system-ui, sans-serif;
 }
 
 blockquote p {
     padding-left: 0.9rem;
     margin-left: 0.9rem;
     border-left: 1px solid black;
-    font-family: Newsreader, 'Times New Roman', Times, serif;
     font-weight: 300;
     font-size: 1.2rem;
 }

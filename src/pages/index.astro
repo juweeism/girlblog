@@ -1,12 +1,17 @@
 ---
+import '../styles/global.css'
+import '@fontsource/zen-maru-gothic';
+
 import BaseHead from '../components/BaseHead.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
 ---
 
 <!doctype html>
@@ -14,10 +19,11 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="max-w-[700px] mx-auto p-2 md:p-3">
+    <body>
+	    <div class="max-w-[600px] mx-auto p-2 md:p-3">
             <main class="text-center">
                 <div class="relative w-max mx-auto">
-                    <pre class="font-mono leading-none text-[70%] md:text-sm md:leading-none my-12">
+                    <pre class="font-mono leading-none text-[69%] md:text-[90%] md:text-sm md:leading-none my-12">
        _                         _      
       (_)_  ___      _____  ___ ( )_____
      / / / / / | /| / / _ \/ _ \|// ___/
@@ -32,62 +38,48 @@ const posts = (await getCollection('blog')).sort(
                     <a href="/about" class="absolute right-[3.7rem] bottom-[-3px] md:bottom-[-9px] text-xs md:text-base md:right-[0.5rem] bg-lime-500 py-1 px-2 rounded-[50%] text-white md:rotate-[-7deg] hover:rotate-12">about me</a>
                 </div>
             </main>
-            <table class="table-fixed h-full mt-3 md:mt-9 table-auto border-spacing-y-[3px] w-full rounded-sm outline outline-solid outline-black outline-[1px] overflow-hidden font-sans">
-                <caption class="text-sm md:text-base text-start px-2 py-1 bg-gradient-to-t from-sky-200 via-sky-300 to-sky-100 border-b border-black font-bold">🔗 DIRECTORY</caption>
+            <table class="table-fixed h-full mt-3 md:mt-9 table-auto border-spacing-y-[3px] w-full rounded-xs outline outline-solid outline-black outline-[1px] overflow-hidden font-sans">
+                <caption class="text-sm md:text-base text-start px-2 py-1 bg-linear-to-t from-sky-200 via-sky-300 to-sky-100 border-b border-black font-bold">🔗 DIRECTORY</caption>
                 <tbody>
-                    <tr class="text-center text-sm md:text-base cursor-pointer">
-                        <td class="px-2 underline hover:bg-zinc-100 text-blue-700">
-                            <a href="/home">/home</a>
+                    <tr class="text-mint text-center text-sm md:text-base cursor-pointer">
+                        <td class="px-2 underline hover:bg-zinc-100">
+                            <a href="/">/home</a>
                         </td>
-                        <td class="px-2 underline hover:bg-zinc-100 text-blue-700">
+                        <td class="px-2 underline hover:bg-zinc-100">
                             <a href="/about">/about</a>
                         </td>
-                        <td class="px-2 underline hover:bg-zinc-100 text-blue-700">
+                        <td class="px-2 underline hover:bg-zinc-100">
                             <a href="/rss">/rss</a>
                         </td>
                     </tr>
-                    <tr class="text-center text-sm md:text-base cursor-pointer">
-                        <td class="px-2 underline hover:bg-zinc-100 text-blue-700">
+                    <tr class="text-mint text-center text-sm md:text-base cursor-pointer">
+                        <td class="px-2 underline hover:bg-zinc-100">
                             <a href="https://digest.juw.ee">digest.*</a>
                         </td>
-                        <td class="px-2 underline hover:bg-zinc-100 text-blue-700">
+                        <td class="px-2 underline hover:bg-zinc-100">
                             <a href="https://archive.juw.ee">archives.*</a>
                         </td>
-                        <td class="px-2 underline hover:bg-zinc-100 text-blue-700">
+                        <td class="px-2 underline hover:bg-zinc-100">
                             <a href="https://blogroll.juw.ee">blogroll.*</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <table class="hidden h-full mt-3 md:mt-9 table-auto border-spacing-y-[3px] w-full rounded-sm outline outline-solid outline-black outline-[1px] overflow-hidden font-sans">
-                <caption class="text-sm md:text-base text-start px-2 py-1 bg-gradient-to-t from-sky-200 via-sky-300 to-sky-100 border-b border-black font-bold">THINGS I MADE</caption>
-                <tbody>
-                    <tr class="text-sm md:text-base cursor-pointer">
-                        <td>In The Name of Hues</td>
-                        <td>digest.juw.ee</td>
-                    </tr>
-                    <tr class="text-sm md:text-base cursor-pointer">
-                        <td>Juwee's Archives</td>
-                        <td>archive.juw.ee</td>
-                    </tr>
-                    <tr class="text-sm md:text-base cursor-pointer">
-                        <td>Cornerboard</td>
-                        <td>cornerboard.xyz</td>
-                    </tr>
-                    <tr class="text-sm md:text-base cursor-pointer">
-                        <td>Cinerama</td>
-                        <td>cinerama.pages.dev</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="h-full mt-3 md:mt-9 table-auto border-spacing-y-[3px] w-full rounded-sm outline outline-solid outline-black outline-[1px] overflow-hidden font-sans">
-                <caption class="text-sm md:text-base text-start px-2 py-1 bg-gradient-to-t from-lime-200 via-lime-300 to-lime-100 border-b border-black font-bold">📝 LATEST POSTS</caption>
+            <table class="h-full mt-3 md:mt-9 table-auto border-spacing-y-[3px] w-full rounded-xs outline outline-solid outline-black outline-[1px] overflow-hidden font-sans">
+                <caption class="text-sm md:text-base text-start px-2 py-1 bg-linear-to-t from-lime-200 via-lime-300 to-lime-100 border-b border-black font-bold">📝 LATEST POSTS</caption>
                 <tbody>
                     {
                         posts.map((post, index) => (
-                            <tr class="text-sm md:text-base cursor-pointer hover:bg-zinc-100 hover:text-blue-700">
-                                <td class="px-2 font-bold"><a href=`/blog/${post.slug}` class="block">{post.data.title}</a></td>
-                                <td class="pr-2 text-end">
+                            <tr class="cursor-pointer hover:bg-zinc-100 hover:text-mint">
+                                <td class="px-2 font-bold pb-1">
+                                    <a href=`/blog/${post.slug}` class="block">
+                                        {post.data.title}
+                                        <div class="text-xs md:text-sm font-normal">
+                                            {post.data.description}
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="pr-2 text-end align-top">
                                     <a href=`/blog/${post.slug}` class="block">
 									    <FormattedDate date={post.data.pubDate} /> 
                                     </a>
@@ -97,8 +89,8 @@ const posts = (await getCollection('blog')).sort(
                     }
                 </tbody>
             </table>
-            <table class="border-collapse h-full mt-3 md:mt-9 table-auto border-spacing-y-[3px] w-full rounded-sm outline outline-solid outline-black outline-[1px] overflow-hidden font-sans">
-                <caption class="text-sm md:text-base text-start px-2 py-1 bg-gradient-to-t from-fuchsia-200 via-fuchsia-300 to-fuchsia-100 border-b border-black font-bold">☎️ CONTACT JUWEE</caption>
+            <table class="border-collapse h-full mt-3 md:mt-9 table-auto border-spacing-y-[3px] w-full rounded-xs outline outline-solid outline-black outline-[1px] overflow-hidden font-sans">
+                <caption class="text-sm md:text-base text-start px-2 py-1 bg-linear-to-t from-fuchsia-200 via-fuchsia-300 to-fuchsia-100 border-b border-black font-bold">☎️ CONTACT JUWEE</caption>
                 <tbody>
                     <tr class="text-center text-sm md:text-base cursor-pointer">
                         <td class="border-r border-black px-2 py-2 font-bold hover:bg-zinc-100 hover:text-blue-700">
@@ -116,25 +108,6 @@ const posts = (await getCollection('blog')).sort(
                     </tr>
                 </tbody>
             </table>
-            <div class="hidden max-w-[600px] mx-auto overflow-hidden">
-                <div class="w-max overflow-hidden text-xs tracking-widest">---------------------------------------------------------------------------------------------------------</div>
-                <h3 class="leading-none px-3">POSTS</h3>
-                <div class="w-max overflow-hidden text-xs tracking-widest">---------------------------------------------------------------------------------------------------------</div>
-                <ul>
-                {
-						posts.map((post) => (
-							<li class="py-1 px-3 hover:bg-zinc-300">
-								<a href={`/blog/${post.slug}/`} class="flex gap-3 justify-between w-full">
-									<span class="underline">{post.data.title}</span>
-									<p class="">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-                }
-                </ul>
-            </div>
             <div id="gradient" class="hidden"></div>
             <div id="gradient-bottom" class="hidden"></div>
             <footer class="py-7 px-2 font-sans text-center w-full text-zinc-400 text-xs">
@@ -145,6 +118,7 @@ const posts = (await getCollection('blog')).sort(
                 </ul>
                 juwee's girlblog <br/> since 2024 <br />
             </footer>
+        </div>
 	</body>
 </html>
 

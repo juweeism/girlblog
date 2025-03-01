@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
+import '@fontsource/zen-maru-gothic'
 
 import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -36,8 +36,9 @@ const { title, description, pubDate, thumbnail = ""} = Astro.props;
         <meta name="twitter:image" content={thumbnail || "/banner.png"} />
 	</head>
 
-	<body class="flex flex-col gap-3 max-w-[700px] mx-auto font-mono">
-		<main class=" px-5 py-6">
+    <body>
+	<div class="flex flex-col max-w-[500px] md:max-w-[750px] m-auto font-mono">
+		<main id="blog-title" class="my-6">
             <a href="/">
             <pre class="font-mono leading-none text-[50%]">
        _                         _      
@@ -52,33 +53,45 @@ const { title, description, pubDate, thumbnail = ""} = Astro.props;
 /____/                       /____/     
             </pre>
             </a>
+            <div class="flex gap-5 my-3 text-mint font-sans [&>a]:underline">
+                <a href="/">/home</a>
+                <a href="/about">/about</a>
+                <a href="/rss.xml">/rss</a>
+            </div>
 		</main>
-        <div>
-			<article class="mt-12">
-				<div class="prose ">
-					<div class="overflow-hidden px-5 py-6">
+        <div class="m-0 p-0">
+			<article>
+                <div class="prose prose:w-full max-w-[70ch] font-sans 
+                    prose-h3:text-xl 
+                    prose-a:text-mint
+                    prose-img:p-0
+                    w-full
+                ">
+					<div id="blog-header">
 						<div class="uppercase">
 							<FormattedDate date={pubDate} />
 						</div>
-						<h1 class="text-4xl md:text-5xl">{title}</h1>
+						<h1 class="text-3xl md:text-4xl">{title}</h1>
+                        <h3>{description}</h3>
 					</div>
-                    <div class="my-3 px-5 py-6">
+                    <div id="blog-content" class="my-9">
 					    <slot />
                     </div>
 				</div>
 			</article>
         </div>
-        <div id="gradient"></div>
-        <div id="gradient-bottom"></div>
+    </div>
 	</body>
 </html>
 
-<style>
-    #gradient {
-        background: linear-gradient(#3333ff, #3333ff66, #3333ff00);
+<style is:global>
+    #blog-title, #blog-header, #blog-content > *:not(div > p:has(img)) {
+        padding: 0 3rem;
     }
 
-    #gradient-bottom {
-        background: linear-gradient(#3333ff00, #3333ff33, #3333ffcc);
+    @media screen and (max-width: 600px) {
+        #blog-title, #blog-header, #blog-content > *:not(div > p:has(img)) {
+            padding: 0 1rem;
+        }
     }
 </style>
