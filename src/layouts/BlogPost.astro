@@ -62,6 +62,7 @@ const { title, description, pubDate, thumbnail = ""} = Astro.props;
         <div class="m-0 p-0">
 			<article>
                 <div class="prose prose:w-full max-w-[70ch] font-sans 
+                    prose-small:block prose-small:text-center prose-small:mt-[-1rem]
                     prose-h3:text-xl 
                     prose-a:text-mint
                     prose-img:p-0
@@ -85,6 +86,12 @@ const { title, description, pubDate, thumbnail = ""} = Astro.props;
 </html>
 
 <style is:global>
+    article small {
+        display: block;
+        text-align: center;
+        margin-top: -1rem;
+    }
+
     #blog-title, #blog-header, #blog-content > *:not(div > p:has(img)) {
         padding: 0 3rem;
     }
