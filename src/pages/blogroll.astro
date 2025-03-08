@@ -1,0 +1,57 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+
+const PAGE_TITLE = "blogroll | juw.ee"
+const PAGE_DESCRIPTION = "juwee's blogroll"
+---
+
+<MainLayout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
+    <h1 class="text-3xl">blogroll</h1>
+
+    <p class="my-3 [&_a]:text-mint">
+    Hi all! Welcome to my blogroll, presented in alphabetical order because i will die first before getting caught having favoritsm. You should also check out <a href="https://digest.juw.ee">In The Name of Hues</a> where my collection of links is organized into a bite sized digest.
+    </p>
+
+    <div class="flex flex-col gap-3 [&_a]:text-mint">
+        <div>
+            <h3 class="text-xl my-3">people</h3>
+            <ul>
+                <li><a href="https://char.blog">char.blog</a></li>
+                <li><a href="https://deor.app">deor.app</a></li>
+                <li><a href="https://echo4eva.com">echo4eva.com</a></li>
+                <li><a href="https://kennethnym.com">kennethnym.com</a></li>
+                <li><a href="https://www.pran.place/">pran.place</a></li>
+                <li><a href="https://seated.ro/">seated.ro</a></li>
+                <li><a href="https://snats.xyz/">snats.xyz</a></li>
+                <li><a href="https://yvas.me">yvas.me</a></li>
+                <li><a href="https://www.zihwoi.com/">zihwoi.com</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-xl my-3">admiring from afar</h3>
+            <ul>
+                <li><a href="http://frnsys.com/">frnsys.com</a></li>
+                <li><a href="https://maxbo.me/">maxbo.me</a></li>
+                <li><a href="https://nicochilla.com/stuff/">nicochilla.com</a></li>
+                <li><a href="https://shen.land">shen.land</a></li>
+                <li><a href="https://spencer.place">spencer.place</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-xl my-3">newsletters</h3>
+            <ul>
+                <li><a href="https://www.inkandswitch.com/">Ink & Switch</a></li>
+                <li><a href="https://interactionmagic.com/">Interaction Magic</a></li>
+                <li><a href="https://posthog.com/blog">PostHog Engineering</a></li>
+            </ul>
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+    a {
+        @apply underline
+    }
+</style>
